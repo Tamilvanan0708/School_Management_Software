@@ -11,9 +11,14 @@ async function bootstrap() {
 
   app.setGlobalPrefix('api/v1');
   app.use(helmet({ crossOriginResourcePolicy: false }));
-  const allowedOrigins = (process.env.ALLOWED_ORIGINS || 'http://localhost:3000').split(',');
+  const allowedOrigins = (process.env.ALLOWED_ORIGINS || '*').split(',').map((o) => o.trim());
   app.enableCors({
-    origin: (origin, cb) => (!origin || allowedOrigins.includes(origin) ? cb(null, true) : cb(new Error('CORS blocked'))),
+    origin: (origin, cb) => {
+      if (!origin || allowedOrigins.includes('*') || allowedOrigins.includes(origin)) {
+        return cb(null, true);
+      }
+      return cb(null, false);
+    },
     credentials: true,
   });
   // rawBody is captured globally by NestFactory.create({ rawBody: true }) — used for Razorpay webhook signature verification.
