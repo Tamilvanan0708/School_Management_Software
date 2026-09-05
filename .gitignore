@@ -1,0 +1,25 @@
+# OS / editors
+.DS_Store
+*.swp
+.idea/
+
+# logs & temp
+*.log
+tmp/
+
+# dependency/build artifacts (also covered per-package)
+node_modules/
+dist/
+.next/
+.expo/
+.turbo/
+coverage/
+*.tsbuildinfo
+
+# secrets — never commit
+.env
+.env.*
+!.env.example
+
+# runtime uploads
+school-platform/backend/uploads/

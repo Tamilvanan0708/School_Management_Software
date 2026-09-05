@@ -1,0 +1,7 @@
+const config = {
+  style: {
+    postcss: "./postcss.config.mjs",
+  },
+};
+
+export default config;

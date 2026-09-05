@@ -1,0 +1,18 @@
+export const PERMISSIONS = {
+  STUDENT: { VIEW: 'student:view', CREATE: 'student:create', EDIT: 'student:edit', DELETE: 'student:delete' },
+  TEACHER: { VIEW: 'teacher:view', CREATE: 'teacher:create', EDIT: 'teacher:edit', DELETE: 'teacher:delete' },
+  CLASS: { VIEW: 'class:view', CREATE: 'class:create', EDIT: 'class:edit', DELETE: 'class:delete' },
+  ATTENDANCE: { VIEW: 'attendance:view', CREATE: 'attendance:create', EDIT: 'attendance:edit' },
+  TIMETABLE: { VIEW: 'timetable:view', CREATE: 'timetable:create', EDIT: 'timetable:edit' },
+  HOMEWORK: { VIEW: 'homework:view', CREATE: 'homework:create', EDIT: 'homework:edit', DELETE: 'homework:delete' },
+  ASSIGNMENT: { VIEW: 'assignment:view', CREATE: 'assignment:create', EDIT: 'assignment:edit', DELETE: 'assignment:delete' },
+  EXAM: { VIEW: 'exam:view', CREATE: 'exam:create', EDIT: 'exam:edit' },
+  RESULT: { VIEW: 'result:view', CREATE: 'result:create', EDIT: 'result:edit' },
+  FEE: { VIEW: 'fee:view', CREATE: 'fee:create', EDIT: 'fee:edit', PAY: 'fee:pay' },
+  LEAVE: { VIEW: 'leave:view', CREATE: 'leave:create', APPROVE: 'leave:approve' },
+  ANNOUNCEMENT: { VIEW: 'announcement:view', CREATE: 'announcement:create', PUBLISH: 'announcement:publish' },
+  SETTINGS: { VIEW: 'settings:view', EDIT: 'settings:edit' },
+  USER: { VIEW: 'user:view', CREATE: 'user:create', EDIT: 'user:edit', DELETE: 'user:delete' },
+  ROLE: { VIEW: 'role:view', CREATE: 'role:create', EDIT: 'role:edit', DELETE: 'role:delete' },
+  REPORT: { VIEW: 'report:view', CREATE: 'report:create' },
+} as const;

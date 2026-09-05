@@ -1,0 +1,13 @@
+{
+  "expo": {
+    "name": "School App",
+    "slug": "school-app",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "scheme": "school-app",
+    "platforms": ["ios", "android"],
+    "ios": { "supportsTablet": true },
+    "android": { "adaptiveIcon": { "backgroundColor": "#ffffff" } },
+    "plugins": ["expo-router"]
+  }
+}

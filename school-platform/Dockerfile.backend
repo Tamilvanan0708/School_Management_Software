@@ -1,0 +1,16 @@
+FROM node:22-slim AS deps
+WORKDIR /repo
+RUN corepack enable && corepack prepare pnpm@9.15.9 --activate
+COPY . .
+
+FROM node:22-slim AS build
+WORKDIR /repo
+RUN corepack enable && corepack prepare pnpm@9.15.9 --activate
+COPY --from=deps /repo ./
+RUN pnpm install --frozen-lockfile && pnpm --filter @school/backend exec npx prisma generate && pnpm --filter @school/backend build
+
+FROM node:22-slim
+WORKDIR /app
+COPY --from=build /repo ./
+EXPOSE 4000
+CMD ["node", "backend/dist/main.js"]
