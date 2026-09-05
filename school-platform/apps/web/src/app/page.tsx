@@ -1,8 +1,402 @@
-export default function Home() {
+'use client';
+import Link from 'next/link';
+
+export default function HomePage() {
   return (
-    <main style={{ padding: "2rem", maxWidth: 800, margin: "0 auto" }}>
-      <h1 style={{ fontSize: "2rem", fontWeight: "bold" }}>School Management Portal</h1>
-      <p>Unified platform for students, teachers, parents, and administrators.</p>
-    </main>
+    <div className="min-h-screen bg-slate-50 text-slate-900 font-sans">
+      {/* ── Public Navigation Bar ── */}
+      <header className="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200/80">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+          <div className="flex items-center gap-3.5">
+            <div className="w-11 h-11 rounded-xl bg-linear-to-tr from-blue-700 to-indigo-600 flex items-center justify-center text-white text-2xl font-bold shadow-md shadow-blue-600/30">
+              🎓
+            </div>
+            <div>
+              <span className="font-bold text-slate-900 text-lg tracking-tight block">
+                Demo International School
+              </span>
+              <span className="text-xs text-slate-500 block -mt-0.5">
+                Excellence · Integrity · Innovation
+              </span>
+            </div>
+          </div>
+
+          <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
+            <a href="#about" className="hover:text-blue-600 transition-colors">About Us</a>
+            <a href="#academics" className="hover:text-blue-600 transition-colors">Academics</a>
+            <a href="#facilities" className="hover:text-blue-600 transition-colors">Campus Life</a>
+            <a href="#notices" className="hover:text-blue-600 transition-colors">Notice Board</a>
+            <a href="#contact" className="hover:text-blue-600 transition-colors">Contact</a>
+          </nav>
+
+          <div className="flex items-center gap-3">
+            <Link
+              href="/login"
+              className="px-5 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold shadow-md shadow-blue-600/25 transition-all flex items-center gap-2"
+            >
+              <span>Portal Login</span>
+              <span>➔</span>
+            </Link>
+          </div>
+        </div>
+      </header>
+
+      {/* ── Hero Section ── */}
+      <section className="relative overflow-hidden pt-16 pb-20 md:pt-24 md:pb-28 bg-linear-to-b from-white via-slate-50 to-slate-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="max-w-3xl mx-auto text-center">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200/80 text-blue-700 text-xs font-semibold uppercase tracking-wider mb-6">
+              <span>🌟</span> Admissions Open for 2026–2027
+            </div>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-slate-950 tracking-tight leading-[1.15] mb-6">
+              Nurturing Tomorrow’s Leaders with <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-600 to-indigo-600">Excellence</span> & <span className="text-transparent bg-clip-text bg-linear-to-r from-indigo-600 to-violet-600">Values</span>
+            </h1>
+            <p className="text-base sm:text-lg text-slate-600 leading-relaxed mb-8 max-w-2xl mx-auto">
+              Welcome to Demo International School. We provide a holistic educational environment integrating world-class academics, modern STEM labs, sports, and transparent parent-school collaboration.
+            </p>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
+              <Link
+                href="/login"
+                className="w-full sm:w-auto px-7 py-3.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-semibold text-base shadow-lg shadow-blue-600/30 transition-all flex items-center justify-center gap-2"
+              >
+                <span>Enter Staff & Parent Portal</span>
+                <span>➔</span>
+              </Link>
+              <a
+                href="#academics"
+                className="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-white hover:bg-slate-100 text-slate-700 font-semibold text-base border border-slate-200 transition-all"
+              >
+                Explore Academic Wings
+              </a>
+            </div>
+          </div>
+        </div>
+
+        {/* Decorative background blobs */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-blue-400/10 blur-[100px] pointer-events-none rounded-full" />
+      </section>
+
+      {/* ── Key Statistics Ribbon ── */}
+      <section className="bg-slate-900 text-white py-12 border-y border-slate-800">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div>
+              <div className="text-3xl sm:text-4xl font-extrabold text-blue-400 tracking-tight">1,200+</div>
+              <div className="text-xs sm:text-sm text-slate-400 mt-1 font-medium">Students Enrolled</div>
+            </div>
+            <div>
+              <div className="text-3xl sm:text-4xl font-extrabold text-indigo-400 tracking-tight">98.8%</div>
+              <div className="text-xs sm:text-sm text-slate-400 mt-1 font-medium">Board Exam Distinction</div>
+            </div>
+            <div>
+              <div className="text-3xl sm:text-4xl font-extrabold text-emerald-400 tracking-tight">65+</div>
+              <div className="text-xs sm:text-sm text-slate-400 mt-1 font-medium">Certified Educators</div>
+            </div>
+            <div>
+              <div className="text-3xl sm:text-4xl font-extrabold text-amber-400 tracking-tight">15:1</div>
+              <div className="text-xs sm:text-sm text-slate-400 mt-1 font-medium">Student-Teacher Ratio</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── About Us & Educational Philosophy ── */}
+      <section id="about" className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <div className="text-xs font-bold uppercase tracking-wider text-blue-600 mb-2">
+                Our Educational Philosophy
+              </div>
+              <h2 className="text-3xl font-bold text-slate-950 tracking-tight mb-5">
+                Every child has an innate potential waiting to be discovered
+              </h2>
+              <p className="text-slate-600 leading-relaxed mb-4">
+                At Demo International School, education extends beyond textbook memorization. We inspire students to think critically, experiment fearlessly, and develop character that stands strong through life&apos;s challenges.
+              </p>
+              <p className="text-slate-600 leading-relaxed mb-6">
+                Our campus pairs rigorous curriculum standards with personalized mentoring, sports programs, fine arts, and cutting-edge digital infrastructure.
+              </p>
+              <div className="grid grid-cols-2 gap-4">
+                <div className="p-4 rounded-xl bg-slate-50 border border-slate-100">
+                  <div className="text-2xl mb-1">🎯</div>
+                  <div className="font-bold text-slate-900 text-sm">Outcome Focused</div>
+                  <div className="text-xs text-slate-500 mt-0.5">Continuous evaluation & transparent feedback</div>
+                </div>
+                <div className="p-4 rounded-xl bg-slate-50 border border-slate-100">
+                  <div className="text-2xl mb-1">🤝</div>
+                  <div className="font-bold text-slate-900 text-sm">Connected Parents</div>
+                  <div className="text-xs text-slate-500 mt-0.5">Real-time attendance & fee management app</div>
+                </div>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-2 gap-4">
+              <div className="space-y-4">
+                <div className="p-6 rounded-2xl bg-blue-50 border border-blue-100 text-center">
+                  <div className="text-4xl mb-2">🔬</div>
+                  <div className="font-bold text-slate-900">Modern Labs</div>
+                  <div className="text-xs text-slate-600 mt-1">Physics, Chemistry, Biology & Robotics</div>
+                </div>
+                <div className="p-6 rounded-2xl bg-indigo-50 border border-indigo-100 text-center">
+                  <div className="text-4xl mb-2">⚽</div>
+                  <div className="font-bold text-slate-900">Athletic Arena</div>
+                  <div className="text-xs text-slate-600 mt-1">Football, Cricket, Basketball & Swimming</div>
+                </div>
+              </div>
+              <div className="space-y-4 pt-6">
+                <div className="p-6 rounded-2xl bg-emerald-50 border border-emerald-100 text-center">
+                  <div className="text-4xl mb-2">📖</div>
+                  <div className="font-bold text-slate-900">Digital Library</div>
+                  <div className="text-xs text-slate-600 mt-1">10,000+ Titles, Journals & E-learning</div>
+                </div>
+                <div className="p-6 rounded-2xl bg-amber-50 border border-amber-100 text-center">
+                  <div className="text-4xl mb-2">🎨</div>
+                  <div className="font-bold text-slate-900">Fine Arts Studio</div>
+                  <div className="text-xs text-slate-600 mt-1">Music, Classical Dance & Theatre</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Academic Programs Wings ── */}
+      <section id="academics" className="py-20 bg-slate-50 border-t border-slate-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-2xl mx-auto mb-14">
+            <div className="text-xs font-bold uppercase tracking-wider text-blue-600 mb-2">
+              Structured for Every Milestone
+            </div>
+            <h2 className="text-3xl font-bold text-slate-950 tracking-tight">Academic Wings</h2>
+            <p className="text-slate-600 mt-2 text-sm">
+              Tailored pedagogical stages meeting the emotional and cognitive growth of students at every grade.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="bg-white rounded-2xl p-7 border border-slate-200/80 shadow-xs hover:shadow-md transition-shadow">
+              <div className="w-12 h-12 rounded-xl bg-blue-100 text-blue-700 flex items-center justify-center text-2xl font-bold mb-5">
+                🌱
+              </div>
+              <div className="text-xs font-bold uppercase tracking-wider text-blue-600 mb-1">Kindergarten to Grade 5</div>
+              <h3 className="text-xl font-bold text-slate-900 mb-3">Primary Wing</h3>
+              <p className="text-slate-600 text-sm leading-relaxed mb-4">
+                Foundational numeracy, linguistic fluency, hands-on science activities, and social-emotional development through experiential play and storytelling.
+              </p>
+              <ul className="text-xs text-slate-500 space-y-1.5 border-t border-slate-100 pt-4">
+                <li>✓ Activity-based curriculum</li>
+                <li>✓ Phonics & multi-lingual basics</li>
+                <li>✓ Interactive smartboard classes</li>
+              </ul>
+            </div>
+
+            <div className="bg-white rounded-2xl p-7 border border-slate-200/80 shadow-xs hover:shadow-md transition-shadow">
+              <div className="w-12 h-12 rounded-xl bg-indigo-100 text-indigo-700 flex items-center justify-center text-2xl font-bold mb-5">
+                🌿
+              </div>
+              <div className="text-xs font-bold uppercase tracking-wider text-indigo-600 mb-1">Grade 6 to Grade 8</div>
+              <h3 className="text-xl font-bold text-slate-900 mb-3">Middle School Wing</h3>
+              <p className="text-slate-600 text-sm leading-relaxed mb-4">
+                Transitioning to inquiry-based learning in physical sciences, computational thinking, humanities, and active participation in competitive sports and debates.
+              </p>
+              <ul className="text-xs text-slate-500 space-y-1.5 border-t border-slate-100 pt-4">
+                <li>✓ Science laboratory experiments</li>
+                <li>✓ Coding & computer literacy</li>
+                <li>✓ Inter-school competitions</li>
+              </ul>
+            </div>
+
+            <div className="bg-white rounded-2xl p-7 border border-slate-200/80 shadow-xs hover:shadow-md transition-shadow">
+              <div className="w-12 h-12 rounded-xl bg-purple-100 text-purple-700 flex items-center justify-center text-2xl font-bold mb-5">
+                🌳
+              </div>
+              <div className="text-xs font-bold uppercase tracking-wider text-purple-600 mb-1">Grade 9 to Grade 12</div>
+              <h3 className="text-xl font-bold text-slate-900 mb-3">Senior Secondary Wing</h3>
+              <p className="text-slate-600 text-sm leading-relaxed mb-4">
+                Specialized streams (Science, Commerce, Humanities) with comprehensive board examination coaching, career counseling, and college preparation.
+              </p>
+              <ul className="text-xs text-slate-500 space-y-1.5 border-t border-slate-100 pt-4">
+                <li>✓ Regular mock test cycles & analytics</li>
+                <li>✓ Career guidance workshops</li>
+                <li>✓ Leadership & student council</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Notice Board & Announcements ── */}
+      <section id="notices" className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-12">
+            <div>
+              <div className="text-xs font-bold uppercase tracking-wider text-blue-600 mb-2">
+                Live Campus Updates
+              </div>
+              <h2 className="text-3xl font-bold text-slate-950 tracking-tight">Notice Board</h2>
+            </div>
+            <Link
+              href="/login"
+              className="mt-4 md:mt-0 text-sm font-semibold text-blue-600 hover:text-blue-700 flex items-center gap-1.5"
+            >
+              <span>View all circulars in portal</span>
+              <span>➔</span>
+            </Link>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="p-6 rounded-2xl bg-amber-50/70 border border-amber-200/80">
+              <div className="flex items-center justify-between mb-3">
+                <span className="px-2.5 py-0.5 rounded-md bg-amber-200 text-amber-900 text-[11px] font-bold uppercase">
+                  Important Notice
+                </span>
+                <span className="text-xs text-slate-500">Sept 10, 2026</span>
+              </div>
+              <h4 className="font-bold text-slate-900 text-base mb-2">
+                Mid-Term Examination Schedules Released
+              </h4>
+              <p className="text-slate-600 text-xs leading-relaxed mb-4">
+                Timetable and syllabus weightage for Class 1 to 10 Mid-Term exams are now published on the portal. Parents are requested to review.
+              </p>
+              <Link href="/login" className="text-xs font-semibold text-amber-800 hover:underline">
+                View Timetable →
+              </Link>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-blue-50/70 border border-blue-200/80">
+              <div className="flex items-center justify-between mb-3">
+                <span className="px-2.5 py-0.5 rounded-md bg-blue-200 text-blue-900 text-[11px] font-bold uppercase">
+                  Event Circular
+                </span>
+                <span className="text-xs text-slate-500">Sept 15, 2026</span>
+              </div>
+              <h4 className="font-bold text-slate-900 text-base mb-2">
+                Annual Science & Robotics Exhibition
+              </h4>
+              <p className="text-slate-600 text-xs leading-relaxed mb-4">
+                Students from Grade 5 and above will present interactive science projects and automated robotic models. Parents are warmly invited.
+              </p>
+              <Link href="/login" className="text-xs font-semibold text-blue-800 hover:underline">
+                Event Schedule →
+              </Link>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-emerald-50/70 border border-emerald-200/80">
+              <div className="flex items-center justify-between mb-3">
+                <span className="px-2.5 py-0.5 rounded-md bg-emerald-200 text-emerald-900 text-[11px] font-bold uppercase">
+                  Fee Reminder
+                </span>
+                <span className="text-xs text-slate-500">Sept 20, 2026</span>
+              </div>
+              <h4 className="font-bold text-slate-900 text-base mb-2">
+                Term 2 Tuition Fee Due Date
+              </h4>
+              <p className="text-slate-600 text-xs leading-relaxed mb-4">
+                Parents can pay tuition and transport fees securely through the portal via UPI, net banking, or debit card with instant PDF receipts.
+              </p>
+              <Link href="/login" className="text-xs font-semibold text-emerald-800 hover:underline">
+                Pay Online →
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Contact & Location ── */}
+      <section id="contact" className="py-20 bg-slate-900 text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div>
+              <div className="text-xs font-bold uppercase tracking-wider text-blue-400 mb-2">
+                Connect With Us
+              </div>
+              <h2 className="text-3xl font-bold tracking-tight mb-4">
+                Demo International School Campus
+              </h2>
+              <p className="text-slate-400 text-sm leading-relaxed mb-6">
+                We welcome prospective parents for guided campus visits every Saturday. Schedule an appointment or reach out to our administration desk.
+              </p>
+              <div className="space-y-3.5 text-sm text-slate-300">
+                <div className="flex items-center gap-3">
+                  <span className="text-blue-400 text-base">📍</span>
+                  <span>123 Education Lane, Knowledge City, New Delhi 110001</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <span className="text-blue-400 text-base">📞</span>
+                  <span>+91 98765 43210 / +91 98765 43211</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <span className="text-blue-400 text-base">✉️</span>
+                  <span>admissions@demoschool.edu · info@demoschool.edu</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <span className="text-blue-400 text-base">⏰</span>
+                  <span>Office Hours: Mon–Sat, 8:00 AM – 4:00 PM</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="p-8 rounded-2xl bg-slate-800/90 border border-slate-700/80">
+              <h3 className="text-lg font-bold text-white mb-2">Campus Visit & Inquiry</h3>
+              <p className="text-xs text-slate-400 mb-5">
+                Leave your details below and our admissions team will contact you within 24 hours.
+              </p>
+              <form onSubmit={(e) => { e.preventDefault(); alert('Thank you for reaching out! Our team will contact you.'); }} className="space-y-3.5">
+                <div>
+                  <label className="block text-xs font-medium text-slate-300 mb-1">Parent Name</label>
+                  <input
+                    type="text"
+                    required
+                    placeholder="Enter full name"
+                    className="w-full px-3.5 py-2 rounded-lg bg-slate-900 border border-slate-700 text-white text-sm focus:outline-hidden focus:border-blue-500"
+                  />
+                </div>
+                <div className="grid grid-cols-2 gap-3">
+                  <div>
+                    <label className="block text-xs font-medium text-slate-300 mb-1">Phone Number</label>
+                    <input
+                      type="tel"
+                      required
+                      placeholder="+91..."
+                      className="w-full px-3.5 py-2 rounded-lg bg-slate-900 border border-slate-700 text-white text-sm focus:outline-hidden focus:border-blue-500"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-xs font-medium text-slate-300 mb-1">Seeking Grade</label>
+                    <select className="w-full px-3.5 py-2 rounded-lg bg-slate-900 border border-slate-700 text-white text-sm focus:outline-hidden focus:border-blue-500">
+                      <option>Class 1 - 5</option>
+                      <option>Class 6 - 8</option>
+                      <option>Class 9 - 10</option>
+                      <option>Class 11 - 12</option>
+                    </select>
+                  </div>
+                </div>
+                <button
+                  type="submit"
+                  className="w-full py-2.5 rounded-lg bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold transition-colors mt-2"
+                >
+                  Submit Inquiry
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Footer ── */}
+      <footer className="bg-slate-950 text-slate-500 text-xs py-8 border-t border-slate-800">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div>
+            © {new Date().getFullYear()} Demo International School. All rights reserved.
+          </div>
+          <div className="flex items-center gap-6">
+            <Link href="/login" className="hover:text-slate-300 transition-colors">Staff Login</Link>
+            <Link href="/login" className="hover:text-slate-300 transition-colors">Parent Portal</Link>
+            <a href="#about" className="hover:text-slate-300 transition-colors">Privacy Policy</a>
+          </div>
+        </div>
+      </footer>
+    </div>
   );
 }
