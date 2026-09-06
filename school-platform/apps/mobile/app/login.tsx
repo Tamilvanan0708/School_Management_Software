@@ -63,7 +63,7 @@ export default function LoginScreen() {
       } else if (primaryRole === "parent") {
         router.replace("/parent/today" as any);
       } else if (primaryRole === "owner" || primaryRole === "principal" || primaryRole === "admin") {
-        router.replace("/teacher/today" as any);
+        router.replace("/owner/today" as any);
       } else {
         router.replace("/student/today" as any);
       }
