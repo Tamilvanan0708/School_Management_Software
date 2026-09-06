@@ -6,8 +6,11 @@
     "orientation": "portrait",
     "scheme": "school-app",
     "platforms": ["ios", "android"],
-    "ios": { "supportsTablet": true },
-    "android": { "adaptiveIcon": { "backgroundColor": "#ffffff" } },
+    "ios": { "bundleIdentifier": "com.demoschool.app", "supportsTablet": true },
+    "android": {
+      "package": "com.demoschool.app",
+      "adaptiveIcon": { "backgroundColor": "#ffffff" }
+    },
     "plugins": ["expo-router"]
   }
 }
