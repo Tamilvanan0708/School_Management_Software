@@ -5,7 +5,10 @@
     "version": "1.0.0",
     "orientation": "portrait",
     "scheme": "school-app",
-    "platforms": ["ios", "android"],
+    "platforms": ["ios", "android", "web"],
+    "web": {
+      "bundler": "metro"
+    },
     "ios": { "bundleIdentifier": "com.demoschool.app", "supportsTablet": true },
     "android": {
       "package": "com.demoschool.app",
